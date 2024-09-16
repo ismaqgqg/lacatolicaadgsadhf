@@ -1,0 +1,933 @@
+body {
+  background: linear-gradient(to right, #000000, #000000, #441b1b);
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  font-family: "Comfortaa", sans-serif;
+  font-optical-sizing: auto;
+  font-weight:weight;
+  font-style: normal;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.section {
+  scroll-snap-align: start; /* Aligns the section to the top of the viewport */
+}
+
+.linesepa  {
+  height: 2px;
+  width: 10px;
+  background-color: #a28c8c;
+  margin: auto;
+}
+
+/*---------------------------------------------------------------menu -----------------------------------------------*/
+html {
+  scroll-behavior: smooth; /* Habilita el desplazamiento suave */
+}
+/* Estilos del contenedor del encabezado */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to right, #000000, #000000, #6f0202);
+  padding: 10px 20px;
+  position: relative; /* Permite que el menú de navegación se posicione absolutamente */
+}
+
+/* Estilos del logotipo */
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilos del menú de navegación */
+.nav {
+  display: flex;
+  align-items: center;
+  position: relative; /* Cambiado de absolute a relative */
+}
+
+/* Botón del menú */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 2; /* Asegura que el botón esté sobre el menú */
+}
+
+/* Estilos del menú desplegable */
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo de los elementos del menú */
+.nav ul li {
+  margin: 0;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+  font-size: 1rem;
+}
+
+/* Estilo del enlace al pasar el mouse */
+.nav ul li a:hover {
+  background-color: #0000002b;
+  color: #706c5b; /* Color de texto al pasar el mouse */
+  border-radius: 10%;
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .nav ul {
+    flex-direction: column;
+    display: none; /* Oculta el menú por defecto */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 600%;
+    background: linear-gradient(to right, #6001017d, #000000, #75000069);
+    text-align: center;
+    padding: 0;
+    opacity: 1; /* Hacemos visible el contenedor */
+
+    z-index:1000;
+
+  }
+
+  .nav ul.show {
+    display: flex; /* Muestra el menú cuando la clase 'show' está aplicada */
+  }
+
+  .menu-toggle {
+    display: block; /* Muestra el botón de menú en pantallas más pequeñas */
+  }
+}
+
+
+
+/*-------------------------------------------------portada imagen de tres---------------------------------------------------- */
+
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.carousel-images {
+  display: flex;
+  width: 50%;
+  animation: slide 20s infinite; 
+}
+
+.carousel-images img {
+  width: 100%;
+  height: auto;
+  flex: 0 0 100%; 
+}
+
+
+@keyframes slide {
+  0% {
+    transform: translateX(0%); 
+  }
+  20% {
+    transform: translateX(0%);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  45% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  70% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  95% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(-400%);
+  }
+}
+
+
+
+
+/*-------------------------------------------------------------------------contenedor 1 -------------------------------------------------------------*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  display: flex;
+}
+
+.texto {
+  max-width: 600px;
+  padding: 10px;
+  background-color: #301b1b;
+  border: 1px solid rgb(152, 81, 81);
+  font-size: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.imagen {
+  grid-column: 2;
+}
+
+.imagen img {
+  width: 100%; /* Elimina el tamaño fijo */
+  object-fit: cover;
+  margin: 50px;
+}
+
+.h5 {
+  color: white;
+  font-size: 10px;
+}
+
+/* Media Query para pantallas pequeñas (menos de 768px) */
+@media (max-width: 767px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .texto {
+    width: 90%;
+    margin: 20px 0;
+    text-align: center;
+    align-items: center;
+    color: #ffffff;
+    border-radius: 20px;
+  }
+
+  .imagen {
+    width: 50%; /* Ajusta el ancho al 100% del contenedor */
+    text-align: center;
+  }
+
+  .imagen img {
+    width: 0%; /* La imagen ocupa el 100% del ancho del contenedor */
+    height: 100%; /* Mantiene la proporción de la imagen */
+    margin: 0; /* Elimina el margen */
+  }
+
+  .h5 {
+    font-size: 12px; /* Aumenta ligeramente el tamaño de fuente en móviles */
+  }
+}
+
+/* Media Query para pantallas grandes (más de 1024px) */
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  .texto {
+    margin: 50px;
+    width: 100%;
+  }
+
+  .imagen1 img {
+    margin: auto;
+  }
+
+  .h5 {
+    font-size: 14px;
+  }
+}
+
+
+/* -------------------------------------------------------------------------informacion------------------------------------------------------------ */
+
+
+
+.info_2 {
+  text-align: center;
+  margin: 100px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  flex-basis: 20%;
+  margin: 20px;
+  padding: 20px;
+  background: linear-gradient(to right, #373737, #521d1d, #232222);
+  border: 1px solid #ddd;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #fff;
+}
+
+.card:hover {
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card i {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.card h5 {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.card p {
+  margin-bottom: 20px;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card li {
+  margin-bottom: 10px;
+}
+
+.card li:before {
+  content: "\2022";
+  font-size: 18px;
+  color: #666;
+  margin-right: 10px;
+}
+
+.flexibilidad-card {
+  flex-basis: 40%;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column; /* Hace que las tarjetas se apilen verticalmente */
+    align-items: stretch; /* Asegura que las tarjetas ocupen todo el ancho disponible */
+  }
+
+  .card {
+    flex-basis: 100%; /* Cada tarjeta ocupará el 100% del ancho */
+    margin: 10px 0; /* Reduce el margen entre tarjetas */
+  }
+}
+
+
+/* -------------------------------------------------------------------------------cursos--------------------------------------------------------------------- */
+
+/* Estilos generales */
+.contenedor_2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 20px;
+  font-family: Albert Sans Thin;
+  font-weight: 200;
+}
+
+.fila {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* Necesario para el posicionamiento absoluto de los pseudoelementos */
+}
+
+.texto {
+  width: 50%;
+  height: auto;
+  padding: 10px;
+  background: linear-gradient(to right, #1c1919, #4b1d1d, #870303);
+  border: 1px solid rgb(105, 37, 37);
+  font-size: 1em;
+  color: #fefefe;
+  transition: transform 0.6s ease-in-out;
+}
+
+.texto:hover {
+  transform: scale(1.1);
+}
+
+.imagen {
+  width: 30%;
+  margin: 0 auto;
+  text-align: center;
+  position: relative; /* Para el posicionamiento absoluto del texto */
+  transition: transform 0.6s ease-in-out;
+}
+
+.imagen img {
+  display: inline-block;
+  margin: 0 auto;
+  transition: transform 0.6s ease-in-out;
+}
+
+.imagen:hover img {
+  transform: scale(1.1);
+}
+
+
+/* --------------------------------modal  de  los  cursos-----------------------------*/
+/* Contenedor del modal y el fondo */
+.modal-wrapper {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.521); /* Fondo semi-transparente */
+  display: none; /* Oculta el contenedor por defecto */
+  transition: opacity 0.3s ease; /* Animación para la transición de opacidad */
+  opacity: 0; /* Inicialmente invisible */
+}
+
+.modal-wrapper.show {
+  display: block;
+  opacity: 1; /* Hacemos visible el contenedor */
+  z-index:inherit;
+}
+
+.modal {
+  position: fixed;
+  bottom: 0; /* Fija el modal en la parte inferior */
+  left: 0;
+  width: 100%;
+  padding-top: 100px;
+  height: 100%; /* Ajusta la altura para que el modal no ocupe toda la pantalla */
+  background-color: rgba(0, 0, 0, 0);
+  transition: transform 0.3s ease-in-out; /* Animación para la apertura */
+  transform: translateY(100%); /* Inicialmente fuera de la vista */
+}
+
+.modal.show {
+  transform: translateY(0); /* Muestra el modal desde abajo */
+  z-index: 1000; /* Asegurar que esté encima de otros elementos */
+  overflow: hidden; /* Ocultar cualquier contenido que se desborde */
+}
+
+.modal-contenido {
+  background-color: #050505;
+  width: 95%;
+  height: 100%;
+  margin: auto;
+  position: relative;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  overflow-y: auto; /* Agrega la barra de desplazamiento vertical */
+  border-radius: 20px;
+  /* No aplicar ninguna transformación */
+}
+
+.modal-contenido h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.modal-contenido p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.modal-contenido ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+}
+
+.modal-contenido li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.cerrar-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #12131200;
+  color: #aa9494;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 50px;
+
+}
+
+.cerrar-modal:hover {
+  background-color: #3b813d00;
+}
+
+.abrir-modal {
+  color: #8487ac;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Personalización de la barra de desplazamiento */
+.modal-contenido::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra de desplazamiento vertical */
+}
+
+.modal-contenido::-webkit-scrollbar-track {
+  background-color: #b3060600; /* Color de la pista de la barra de desplazamiento */
+  border-radius: 30px; /* Esquinas redondeadas de la pista */
+}
+
+.modal-contenido::-webkit-scrollbar-thumb {
+  background-color: #22030300; /* Color del "thumb" de la barra de desplazamiento */
+  border-radius: 10px; /* Esquinas redondeadas del "thumb" */
+}
+
+.modal-contenido::-webkit-scrollbar-thumb:hover {
+  background-color: #380c0c00; /* Color del "thumb" al pasar el ratón */
+}
+
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+  .texto {
+    display: none; /* Oculta el texto en dispositivos móviles */
+  }
+
+  .imagen {
+    width: 90%; /* Asegura que la imagen ocupe todo el ancho en dispositivos móviles */
+    height: auto;
+  }
+
+  .imagen img {
+    width: 90%; /* Asegura que la imagen ocupe todo el ancho en dispositivos móviles */
+  }
+
+  .imagen::after {
+    content: attr(data-text); /* Usa el contenido del atributo data-text como texto */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width:  90%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo semitransparente para el listón */
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 0.9em; /* Tamaño de fuente ajustado para móviles */
+    display: block; /* Muestra el listón */
+    opacity: 0; /* Oculta el listón por defecto */
+    transition: opacity 0.3s ease-in-out; /* Transición para la aparición del listón */
+  }
+
+  .imagen:hover::after {
+    opacity: 1; /* Muestra el listón al pasar el cursor (o tocar) en dispositivos móviles */
+  }
+}
+
+/*----------------------------------------------------------------------------- inscripcion ----------------------------------------------------------------*/
+
+
+/* Estilo del contenedor de inscripciones */
+.inscripcion-container {
+  display: flex;
+  flex-direction: row; /* Por defecto, en pantallas grandes, el contenido está en fila */
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Estilo del texto */
+.inscripcion-texto {
+  flex: 1; /* Toma el ancho disponible en el contenedor */
+  padding: 20px;
+  color: #fff6f6;
+}
+
+/* Estilo del video */
+.inscripcion-video {
+  flex: 1; /* Toma el ancho disponible en el contenedor */
+  padding: 20px;
+}
+
+/* Estilo del iframe del video */
+.inscripcion-video iframe {
+  width: 100%;
+  height: 450px;
+  border-radius: 10px;
+}
+
+/* Estilo para encabezados y párrafos dentro del texto */
+.inscripcion-texto h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.inscripcion-texto p, .inscripcion-texto ul {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.inscripcion-texto ul {
+  padding-left: 20px;
+}
+
+.inscripcion-texto ul li {
+  margin-bottom: 5px;
+}
+
+.inscripcion-texto a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #fff;
+  background-color: #640D14;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.inscripcion-texto button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #800e13;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inscripcion-texto button:hover {
+  background-color: #640D14;
+}
+/* Estilo del botón que abre el modal */
+#show-registration-modal {
+  margin: 20px;
+}
+
+/* Estilo del contenedor del modal */
+.registration-modal-wrapper {
+  display: none; /* Ocultar el modal por defecto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Estilo de la superposición del modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+
+/* Estilo del contenido del modal */
+.registration-modal-content {
+  width: 80%;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background: linear-gradient(to right, #000000, #000000, #441b1b);
+  border: 1px solid #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 1001;
+}
+
+/* Estilo del botón de cerrar */
+.btn-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #e0dede;
+}
+
+/* Estilo de la estructura de columnas del formulario */
+.form-columns {
+  display: flex;
+  gap: 20px;
+}
+
+.form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-section label {
+  color: #ffffff;
+}
+
+input,
+select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+/* Estilo del botón de envío */
+input[type="submit"] {
+  background-color: #e66b00;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+#notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e66b00;
+  color: #e13f3f;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  font-size: 16px;
+  text-align: center;
+}
+
+#notification.hidden {
+  display: none;
+}
+
+#notification.visible {
+  display: block;
+}
+
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .registration-modal-content {
+    width: 90%;
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .form-columns {
+    flex-direction: column;
+  }
+}
+
+/* Animación de desvanecimiento */
+.fade-out {
+  animation: fadeOut 0.3s ease-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+/* --------------------------------------------------------------- pie de pagina-------------------------------------------------------------- */
+
+
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  align-items: center;
+}
+
+.imagen {
+  grid-column: 1;
+  text-align: center;
+}
+
+.informacion {
+  grid-column: 2;
+  text-align: center; 
+}
+
+.informacion > div {
+  margin-bottom: 20px;
+}
+
+.informacion p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.sedes a {
+  text-decoration: none;
+  color: #fff;
+  margin: 15px;
+}
+
+.sedes a:hover {
+  color: #800e13;
+}
+.redes_sociales {
+  gap: 50px;
+  margin: 10;
+  text-decoration: none;
+  color: #fff;
+
+
+}
+.redes_sociales i :hover {
+  background:#870303;
+}
+
+
+.redes_sociales a {
+  text-decoration: none;
+}
+.redes_sociales p {
+  text-decoration: none;
+  color: #fff;
+
+
+}
+.redes_sociales i {
+  color: 
+  #fff;
+}
+
+
+/*Media Queries del Footer*/
+/* Media Query para celulares (pantallas pequeñas - menos de 768px) */
+@media (max-width: 767px) {
+  footer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .imagen {
+    grid-column: 1;
+    margin-bottom: 20px;
+  }
+
+  .informacion {
+    grid-column: 1;
+  }
+
+  .informacion p {
+    font-size: 12px;
+  }
+
+  .redes_sociales {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+/* Media Query para tabletas (pantallas medianas - entre 768px y 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .informacion {
+    font-size: 13px;
+  }
+
+  .redes_sociales {
+    justify-content: space-around;
+    gap: 30px;
+  }
+}
+
+/* Media Query para computadoras (pantallas grandes - más de 1024px) */
+@media (min-width: 1024px) {
+  footer {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .informacion p {
+    font-size: 14px;
+  }
+
+  .redes_sociales {
+    justify-content: center;
+  }
+}
+
+
+
+
+
+
+
